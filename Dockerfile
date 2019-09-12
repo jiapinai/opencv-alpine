@@ -102,9 +102,5 @@ RUN mkdir /opt && cd /opt && \
     -D PYTHON_EXECUTABLE=/usr/local/bin/python \
     .. \
   && \
-  make -j$(nproc) && make install && cd .. && rm -rf build \
-  && \
-  cp -p $(find /usr/local/lib/python3.5/site-packages -name cv2.*.so) \
-   /usr/lib/python3.5/site-packages/cv2.so && \
-   python -c 'import cv2; print("Python: import cv2 - SUCCESS")'
+  make -j$(nproc) && make install && cd .. && rm -rf build
 
